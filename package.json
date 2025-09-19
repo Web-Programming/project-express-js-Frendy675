@@ -1,0 +1,22 @@
+{
+  "name": "aplikasi3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Web-Programming/project-express-js-Frendy675.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Web-Programming/project-express-js-Frendy675/issues"
+  },
+  "homepage": "https://github.com/Web-Programming/project-express-js-Frendy675#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
