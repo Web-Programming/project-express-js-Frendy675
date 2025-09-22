@@ -7,6 +7,6 @@ const server = http.createServer((req, res) => {
     res.end('Hello, World!\n');
 });
 
-server.listen(3000, () => { //method listen // port 3000 //nod jd itu runtime 
+server.listen(3000, () => { //method listen // port 3000 //nod itu runtime 
     console.log('Server running at http://localhost:3000/');
 });
