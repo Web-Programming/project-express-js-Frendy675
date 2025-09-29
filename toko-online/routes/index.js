@@ -1,28 +1,31 @@
 var express = require('express');
 var router = express.Router();
-var products = require('../data/products.json');
+var products = require('../data/products.json'); // JSON dari file
 
-const q = req.query.q ? req.query.q.toLowerCase() : '';
-
-  let product = [
+// Data produk dummy tambahan (jika tidak ada di file JSON)
+let product = [
   {id:1,name:"Laptop Gaming", price: 15000000},
   {id:2,name:"Smartphone Pro Max", price: 22000000},
   {id:3,name:"Headset Bluetooth", price: 1500000},
   {id:4,name:"Kamera Mirrorless", price: 5000000},
   {id:5,name:"Smartwatch Series X", price: 1500000},
-  ];
+];
+
+// Gunakan salah satu sumber data saja (products dari JSON/file atau array di atas)
+// Misalnya kita pakai array langsung:
+products = product;
 
 /* GET home page. */
- router.get('/', function (req, res, next) {
-   res.render('index', {
-     title: 'Toko Online Sederhana',
-     products: products
-   });
+router.get('/', function (req, res, next) {
+  res.render('index', {
+    title: 'Toko Online Sederhana',
+    products: products
   });
+});
 
+/* GET search page */
 router.get('/search', function(req, res, next) {
-
-// Filter products berdasarkan 'q' (misal nama produk mengandung q)
+  const q = req.query.q ? req.query.q.toLowerCase() : ''; // ✅ Pindah ke dalam handler
   let filteredProducts;
   let searching = false;
 
@@ -35,9 +38,15 @@ router.get('/search', function(req, res, next) {
     searching = true;
   }
 
-  // Kirim hasil filter ke view 'search-result'
-  res.render('search-result', {
-    title: 'Hasil Pencarian',
+//   res.render('search-result', {
+//     title: 'Hasil Pencarian',
+//     products: filteredProducts,
+//     query: q,
+//     searching: searching
+//   });
+// });
+res.render('index', {
+    title: 'Toko Online Sederhana',
     products: filteredProducts,
     query: q,
     searching: searching
@@ -45,4 +54,3 @@ router.get('/search', function(req, res, next) {
 });
 
 module.exports = router;
-
