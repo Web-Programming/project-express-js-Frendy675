@@ -35,7 +35,7 @@ router.get('/search', function(req, res, next) {
     filteredProducts = products.filter(product =>
       product.name.toLowerCase().includes(q)
     );
-    searching = flase;
+    searching = true;
   }
 
 //   res.render('search-result', {
