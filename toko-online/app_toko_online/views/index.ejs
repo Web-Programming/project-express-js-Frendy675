@@ -1,4 +1,4 @@
-<% layout('layout') %>
+<!-- <% layout('layout') %>
 
 <div class="container mt-5">
   <h1 class="text-center mb-4"><%= title %></h1>
@@ -17,4 +17,37 @@
     <% }); %>
   </div>
 </div>
+ -->
+<% layout('layout') %>
 
+<div class="container mt-5">
+  <h1 class="text-center mb-4"><%= title %></h1>
+
+  <!-- 🔎 Form pencarian -->
+  <form action="/search" method="get" class="mb-4 d-flex justify-content-center">
+    <input type="text" 
+           name="q" 
+           class="form-control w-50 me-2" 
+           placeholder="Cari product..." 
+           value="<%= typeof query !== 'undefined' ? query : '' %>">
+    <button type="submit" class="btn btn-primary">Cari</button>
+  </form>
+  <!-- End form -->
+
+  <div class="row">
+    <% products.forEach(function(product) { %>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text"><%= product.description %></p>
+            <p class="card-text fw-bold">
+              Rp <%= product.price.toLocaleString('id-ID') %>
+            </p>
+            <a href="/product/<%= product.id %>" class="btn btn-primary mt-auto">Detail product</a>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<% layout('layout') %>
+<!-- <!-- <% layout('layout') %>
 
 <div class="container mt-5">
   <div class="card p-4">
@@ -6,6 +6,26 @@
     <hr>
     <p class="card-text"><strong>Deskripsi:</strong> <%= product.description %></p>
     <p class="card-text"><strong>Harga:</strong> Rp <%= product.price.toLocaleString('id-ID') %></p>
+    <a href="/produk/<%= product.id %>" class="btn btn-primary mt-auto">Detail Produk</a>
+    <a href="/" class="btn btn-secondary mt-3">Kembali ke Beranda</a>
+    
+  </div>
+</div> -->
+
+
+
+<% layout('layout') %>
+
+<div class="container mt-5">
+  <div class="card p-4">
+    <h1 class="card-title"><%= product.name %></h1>
+    <hr />
+    <p class="card-text">
+      <strong>Deskripsi:</strong> <%= product.description %>
+    </p>
+    <p class="card-text">
+      <strong>Harga:</strong> Rp <%= product.price.toLocaleString('id-ID') %>
+    </p>
     <a href="/" class="btn btn-secondary mt-3">Kembali ke Beranda</a>
   </div>
 </div>

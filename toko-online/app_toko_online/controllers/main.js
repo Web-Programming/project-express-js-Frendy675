@@ -8,17 +8,35 @@ const index = (req, res) => {
 		 }); 
 }; 
 
-const search = (req, res) => {
-	const q = req.query.q?.toLowerCase() || ''; 
+// const search = (req, res) => {
+// 	const q = req.query.q?.toLowerCase() || ''; 
 	
-	// Filter produk berdasarkan nama (case-insensitive)
-	const filtered = products.filter(p => p.name.toLowerCase().includes(q));
+	// // Filter produk berdasarkan nama (case-insensitive)
+	// const filtered = products.filter(p => p.name.toLowerCase().includes(q));
 
-	res.render('index', { 
-		title: 'Hasil Pencarian',
-		products: filtered,
-		search: q, //kirim kembali query pencarian ke view
-	}); 
-}
+	// res.render('index', { 
+	// 	title: 'Hasil Pencarian',
+	// 	products: filtered,
+	// 	search: q, //kirim kembali query pencarian ke view
+	// }); 
+// }
 
-module.exports = { index, search }; 
+// module.exports = { index}; //, search
+const search = (req, res) => {
+  const q = req.query.q ? req.query.q.toLowerCase() : '';
+  
+  // Filter produk berdasarkan nama atau deskripsi
+  const filtered = products.filter(
+    p =>
+      p.name.toLowerCase().includes(q) ||
+      p.description.toLowerCase().includes(q)
+  );
+
+  res.render('index', { 
+    title: q ? `Hasil Pencarian: ${q}` : 'Toko Online Sederhana',
+    products: filtered,
+    query: q, // biar bisa tampil di input pencarian
+  }); 
+};
+
+module.exports = { index, search };

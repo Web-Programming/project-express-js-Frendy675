@@ -17,7 +17,8 @@ var mainController = require("../controllers/main");
 /* GET home page. */
 router.get('/', mainController.index);
 
-/* GET search result */
-router.get('/search', mainController.search); // tambahkan ini
+// /* GET search result */
+// router.get('/search', mainController.search); // tambahkan ini
+router.get('/search', mainController.search);
 
 module.exports = router;
