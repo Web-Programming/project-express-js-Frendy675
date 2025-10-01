@@ -6,8 +6,8 @@ var logger = require('morgan');
 
 //perbaikan ke 2
 var indexRouter = require('../toko-online/app_toko_online/routes/index');
-var usersRouter = require('./toko_online/routes/users');
-var productRouter = require('./toko_online/routes/product'); //letakkan di atas agar rapi
+var usersRouter = require('./routes/users');
+var productRouter = require('./routes/product'); //letakkan di atas agar rapi
 var engine = require('ejs-blocks'); //menggunakan ejs block
 var app = express();
 
@@ -26,7 +26,8 @@ app.use('/bootstrap', express.static(path.join(__dirname,'node_modules/bootstrap
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use("/produk", productRouter);
+app.use("/product", productRouter);
+app.use('search', searchrouter); //tambahkan ini
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

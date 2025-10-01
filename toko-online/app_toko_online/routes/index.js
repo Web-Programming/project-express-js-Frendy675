@@ -13,12 +13,11 @@
 var express = require('express');
 var router = express.Router();
 var mainController = require("../controllers/main");
-var searchController = require("../controllers/search"); // tambahkan ini
 
 /* GET home page. */
 router.get('/', mainController.index);
 
 /* GET search result */
-router.get('/search', searchController.search); // tambahkan ini
+router.get('/search', mainController.search); // tambahkan ini
 
 module.exports = router;
