@@ -1,4 +1,4 @@
-var products = require('../../data/products.json');
+var products = require('../../data/products.json');// require digunakan untuk mengambil data dari file json
 
 const index = (req, res) => {
  	res.render('index', { 
