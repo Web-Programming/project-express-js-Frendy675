@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop Gaming",
+        "price": 15000000,
+        "description": "Laptop berperforma tinggi untuk kebutuhan gaming anda"
+    },
+    {
+        "id": 2,
+        "name": "Smartphone Pro Max",
+        "price": 12000000,
+        "description": "Smartphone flagship dengan kamera dan performa terbaik"
+    },
+    {
+        "id": 3,
+        "name": "Headset Bluetooth",
+        "price": 750000,
+        "description": "Headset nirkabel dengan kualitas suara jernih dan baterai tahan lama"
+    },
+    {
+        "id": 4,
+        "name": "Kamera Mirrorless",
+        "price": 9500000,
+        "description": "Kamera ringan dengan hasil foto profesional"
+    },
+    {
+        "id": 5,
+        "name": "Smartwatch Series X",
+        "price": 2500000,
+        "description": "Jam tangan pintar dengan fitur kesehatan lengkap"
+    },
+    {
+        "id": 6,
+        "name": "Keyboard Mechanical",
+        "price": 1100000,
+        "description": "Keyboard dengan switch mekanikal untuk pengalaman mengetik maksimal"
+    },
+    {
+        "id": 7,
+        "name": "Mouse Gaming RGB",
+        "price": 650000,
+        "description": "Mouse ergonomis dengan pencahayaan RGB dan sensor presisi tinggi"
+    },
+    {
+        "id": 8,
+        "name": "Monitor 27 Inch 4K",
+        "price": 5700000,
+        "description": "Monitor resolusi tinggi dengan warna tajam untuk editing dan gaming"
+    },
+    {
+        "id": 9,
+        "name": "Tablet Stylus Pro",
+        "price": 8200000,
+        "description": "Tablet dengan stylus presisi untuk desain dan produktivitas"
+    },
+    {
+        "id": 10,
+        "name": "Speaker Bluetooth",
+        "price": 900000,
+        "description": "Speaker portabel dengan suara bass kuat dan tahan air"
+    },
+    {
+        "id": 11,
+        "name": "Router WiFi 6",
+        "price": 1800000,
+        "description": "Router cepat dan stabil dengan teknologi WiFi 6 terbaru"
+    },
+    {
+        "id": 12,
+        "name": "SSD Eksternal 1TB",
+        "price": 2100000,
+        "description": "Penyimpanan cepat dan portabel untuk backup data anda"
+    },
+    {
+        "id": 13,
+        "name": "Drone Kamera 4K",
+        "price": 6500000,
+        "description": "Drone canggih dengan kamera 4K dan kontrol jarak jauh"
+    },
+    {
+        "id": 14,
+        "name": "Printer All-in-One",
+        "price": 2300000,
+        "description": "Printer multifungsi dengan kemampuan scan dan fotokopi"
+    },
+    {
+        "id": 15,
+        "name": "Power Bank 20000mAh",
+        "price": 350000,
+        "description": "Pengisi daya portabel dengan kapasitas besar dan fast charging"
+    },
+    {
+        "id": 16,
+        "name": "Webcam HD",
+        "price": 450000,
+        "description": "Webcam berkualitas tinggi untuk meeting dan streaming"
+    },
+    {
+        "id": 17,
+        "name": "Microphone Condenser",
+        "price": 1200000,
+        "description": "Mic profesional untuk podcast dan rekaman suara"
+    },
+    {
+        "id": 18,
+        "name": "Chair Gaming Ergonomis",
+        "price": 3200000,
+        "description": "Kursi gaming dengan dukungan punggung dan desain nyaman"
+    },
+    {
+        "id": 19,
+        "name": "VR Headset",
+        "price": 8900000,
+        "description": "Perangkat realitas virtual dengan pengalaman imersif"
+    },
+    {
+        "id": 20,
+        "name": "Lampu LED Meja",
+        "price": 250000,
+        "description": "Lampu meja dengan pencahayaan natural dan pengaturan kecerahan"
+    }
+]
