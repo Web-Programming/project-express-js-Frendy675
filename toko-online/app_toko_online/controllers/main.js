@@ -1,42 +1,10 @@
-var products = require('../../data/products.json');// require digunakan untuk mengambil data dari file json
+var products = require('../../data/products.json');
 
 const index = (req, res) => {
- 	res.render('index', { 
-		title: 'Toko Online Sederhana',
-		products: products,
-		search: "",
-		 }); 
+ 	res.render('index', {
+        title: 'Toko Online Sederhana',
+        products: products
+    });
 }; 
 
-// const search = (req, res) => {
-// 	const q = req.query.q?.toLowerCase() || ''; 
-	
-	// // Filter produk berdasarkan nama (case-insensitive)
-	// const filtered = products.filter(p => p.name.toLowerCase().includes(q));
-
-	// res.render('index', { 
-	// 	title: 'Hasil Pencarian',
-	// 	products: filtered,
-	// 	search: q, //kirim kembali query pencarian ke view
-	// }); 
-// }
-
-// module.exports = { index}; //, search
-const search = (req, res) => {
-  const q = req.query.q ? req.query.q.toLowerCase() : '';
-  
-  // Filter produk berdasarkan nama atau deskripsi
-  const filtered = products.filter(
-    p =>
-      p.name.toLowerCase().includes(q) ||
-      p.description.toLowerCase().includes(q)
-  );
-
-  res.render('index', { 
-    title: q ? `Hasil Pencarian: ${q}` : 'Toko Online Sederhana',
-    products: filtered,
-    query: q, // biar bisa tampil di input pencarian
-  }); 
-};
-
-module.exports = { index, search };
+module.exports = { index }; 
