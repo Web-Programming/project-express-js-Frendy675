@@ -13,14 +13,13 @@
     "ejs": "~2.6.1",
     "ejs-blocks": "^0.1.4",
     "express": "~4.16.1",
-    "mongoose": "^6.8.0",
     "express-ejs-layouts": "^2.5.1",
     "http-errors": "~1.6.3",
+    "mongoose": "^6.13.8",
     "morgan": "~1.9.1"
   },
   "description": "",
   "main": "app.js",
-  "devDependencies": {},
   "author": "Frendy Wijaya",
   "license": "ISC"
 }

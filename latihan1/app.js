@@ -8,11 +8,11 @@ require("./app_toko_online/models/db");
 
 //Perbaikan ke 2
 var indexRouter = require('./app_toko_online/routes/index');
-var usersRouter = require('./app_toko_online/routes/users');
+var usersRouter = require('./app_toko_online/routes/api/users');
 var productRouter = require("./app_toko_online/routes/product"); //letakkan di atas agar rapi
 var apiProductRouter = require("./app_toko_online/routes/api/product"); //import route api
-var apiUsersRouter = require('./routes/api/users'); // API users
-var apiOrdersRouter = require('./routes/api/orders'); // API orders
+var apiUsersRouter = require('./app_toko_online/routes/api/users'); // API users
+var apiOrdersRouter = require('./app_toko_online/routes/api/orders'); // API orders
 var engine = require('ejs-blocks'); //menggunakan ejs block
 var app = express();
 
