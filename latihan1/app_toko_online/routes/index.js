@@ -1,6 +1,5 @@
-// Re-export router from top-level toko-online implementation if present
 try {
-  module.exports = require('../../../toko-online/app_toko_online/routes/index');
+  module.exports = require('../../../toko-online/app_toko_online/routes/api/index');
 } catch (e) {
   const express = require('express');
   const router = express.Router();

@@ -1,57 +1,63 @@
-const User = require('../models/users');
+const User = require("../models/users");
 
-// Create user
 exports.createUser = async (req, res) => {
   try {
-    const user = new User(req.body);
-    await user.save();
-    res.status(201).json(user);
+    const { username, email, password, address, isAdmin } = req.body;
+
+    const newUser = new User({ username, email, password, address, isAdmin });
+    await newUser.save();
+
+    res.status(201).json({ message: "User berhasil dibuat", user: newUser });
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(400).json({ message: "Gagal membuat user", error: err.message });
   }
 };
 
-// Read all users
-exports.getUsers = async (req, res) => {
+exports.getAllUsers = async (req, res) => {
   try {
-    const users = await User.find().select('-password');
-    res.json(users);
+    const users = await User.find();
+    res.status(200).json(users);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ message: "Gagal mengambil data user", error: err.message });
   }
 };
 
-// Read single user
-exports.getUser = async (req, res) => {
+exports.getUserById = async (req, res) => {
   try {
-    const user = await User.findById(req.params.id).select('-password');
-    if (!user) return res.status(404).json({ error: 'User tidak ditemukan' });
-    res.json(user);
+    const user = await User.findById(req.params.id);
+    if (!user)
+      return res.status(404).json({ message: "User tidak ditemukan" });
+
+    res.status(200).json(user);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ message: "Gagal mengambil data user", error: err.message });
   }
 };
 
-// Update user
 exports.updateUser = async (req, res) => {
   try {
-    const updates = req.body;
-    delete updates.password; // jangan update password di sini
-    const user = await User.findByIdAndUpdate(req.params.id, updates, { new: true }).select('-password');
-    if (!user) return res.status(404).json({ error: 'User tidak ditemukan' });
-    res.json(user);
+    const updateData = req.body;
+    const user = await User.findByIdAndUpdate(req.params.id, updateData, {
+      new: true
+    });
+
+    if (!user)
+      return res.status(404).json({ message: "User tidak ditemukan" });
+
+    res.status(200).json({ message: "User berhasil diperbarui", user });
   } catch (err) {
-    res.status(400).json({ error: err.message });
+    res.status(400).json({ message: "Gagal memperbarui user", error: err.message });
   }
 };
 
-// Delete user
 exports.deleteUser = async (req, res) => {
   try {
     const user = await User.findByIdAndDelete(req.params.id);
-    if (!user) return res.status(404).json({ error: 'User tidak ditemukan' });
-    res.json({ message: 'User dihapus' });
+    if (!user)
+      return res.status(404).json({ message: "User tidak ditemukan" });
+
+    res.status(200).json({ message: "User berhasil dihapus" });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ message: "Gagal menghapus user", error: err.message });
   }
 };
